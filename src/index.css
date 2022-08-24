@@ -16,7 +16,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--body-color)
+  background: var(--body-color);
+  transition: var(--tran-05)
 }
 
 code {
@@ -31,11 +32,22 @@ code {
   --primary-color: #695cfe;
   --primary-color-light: #f6f5ff;
   --toggle-color: #DDD;
-  --text-color: #707070
+  --text-color: #707070;
+  --title-color: #161111
 
   /* Transitions */;
   --tran-02: all 0.2s ease;
   --tran-03: all 0.3s ease;
   --tran-04: all 0.4s ease;
   --tran-05: all 0.5s ease;
+}
+
+body.darkmode{
+  --body-color: #18191A;
+  --sidebar-color: #242526;
+  --primary-color: #3A3B3C;
+  --primary-color-light: #3A3B3C;
+  --toggle-color: #FFF;
+  --text-color: #CCC;
+  --title-color: #695cfe
 }

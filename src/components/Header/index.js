@@ -8,70 +8,71 @@ import {
 } from "react-icons/bs"
 import { BiCameraMovie } from "react-icons/bi"
 import { TbMovie } from "react-icons/tb"
-import headerStyle from "./header.module.css"
+import "./header.css"
 
 function Header() {
-	const body = document.querySelector("body")
+	const body = document.querySelector("body"),
+		sidebar = body.querySelector(".sidebar")
 
 	const changeTheme = () => {
 		body.classList.toggle("darkmode")
 	}
 
+	const closeSidebar = () => {
+		body.querySelector(".sidebar").classList.toggle("close")
+	}
+
 	return (
 		<>
-			<nav className={headerStyle[`sidebar`]}>
+			<nav className="sidebar">
 				<header>
-					<div className={headerStyle["image-text"]}>
-						<span className={headerStyle["image"]}>
-							<RiMovie2Line className={headerStyle["image-logo"]} />
+					<div className="image-text">
+						<span className="image">
+							<RiMovie2Line className="image-logo" />
 						</span>
 
-						<div className={headerStyle["text header-text"]}>
-							<div className={headerStyle["name"]}>Unifilm</div>
-							<span className={headerStyle["profession"]}>Movie/TV site</span>
+						<div className="text header-text">
+							<div className="name">Unifilm</div>
+							<span className="profession">Movie/TV site</span>
 						</div>
 					</div>
-					<BsArrowRightShort className={headerStyle["toggle"]} />
+					<BsArrowRightShort
+						className="toggle"
+						onClick={() => closeSidebar()}
+					/>
 				</header>
 
-				<div className={headerStyle["menu-bar"]}>
-					<div className={headerStyle["menu"]}>
-						<li className={headerStyle["search-box"]}>
-							<BsSearch className={headerStyle["icon"]} />
+				<div className="menu-bar">
+					<div className="menu">
+						<li className="search-box">
+							<BsSearch className="icon" />
 							<input
 								type="search"
 								placeholder="Search..."
-								className={headerStyle["search-input"]}
+								className="search-input text"
 							/>
 						</li>
-						<ul className={headerStyle["menu-links"]}>
-							<li className={headerStyle["nav-link"]}>
+						<ul className="menu-links">
+							<li className="nav-link">
 								<a href="#">
-									<BiCameraMovie className={headerStyle["icon"]} />
-									<span className={headerStyle["text nav-text"]}>Movies</span>
+									<BiCameraMovie className="icon" />
+									<span className="text nav-text">Movies</span>
 								</a>
 							</li>
-							<li className={headerStyle["nav-link"]}>
+							<li className="nav-link">
 								<a href="#">
-									<TbMovie className={headerStyle["icon"]} />
-									<span className={headerStyle["text nav-text"]}>TV Shows</span>
+									<TbMovie className="icon" />
+									<span className="text nav-text">TV Shows</span>
 								</a>
 							</li>
 						</ul>
 					</div>
-					<div className={headerStyle["bottom-content"]}>
-						<li className={headerStyle["mode"]}>
-							<div className={headerStyle["dark-light"]}>
-								<BsFillMoonFill className={headerStyle["dark"]} />
-								<BsFillSunFill className={headerStyle["light"]} />
+					<div className="bottom-content">
+						<li className="mode">
+							<div className="toggle-switch" onClick={() => changeTheme()}>
+								<span className="switch"></span>
 							</div>
-							<span className={headerStyle["mode-text text"]}>Dark mode</span>
-							<div
-								className={headerStyle["toggle-switch"]}
-								onClick={() => changeTheme()}
-							>
-								<span className={headerStyle["switch"]}></span>
-							</div>
+							<span className="mode-text text">Dark mode</span>
 						</li>
 					</div>
 				</div>
