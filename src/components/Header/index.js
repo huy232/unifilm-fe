@@ -1,82 +1,93 @@
-import React from "react"
+import { useState } from "react"
+import { Link } from "react-router-dom"
 import { RiMovie2Line } from "react-icons/ri"
-import {
-	BsArrowRightShort,
-	BsSearch,
-	BsFillMoonFill,
-	BsFillSunFill,
-} from "react-icons/bs"
+import { BsArrowRightShort, BsArrowLeftShort, BsStar } from "react-icons/bs"
 import { BiCameraMovie } from "react-icons/bi"
 import { TbMovie } from "react-icons/tb"
+import { RiMovieLine } from "react-icons/ri"
+import { MdOutlineLocalMovies } from "react-icons/md"
 import "./header.css"
 
 function Header() {
-	const body = document.querySelector("body"),
-		sidebar = body.querySelector(".sidebar")
+	const [activeSidebar, setActiveSidebar] = useState(true)
 
-	const changeTheme = () => {
-		body.classList.toggle("darkmode")
-	}
-
-	const closeSidebar = () => {
-		body.querySelector(".sidebar").classList.toggle("close")
+	const toggleSidebar = () => {
+		setActiveSidebar(!activeSidebar)
 	}
 
 	return (
 		<>
-			<nav className="sidebar">
-				<header>
-					<div className="image-text">
-						<span className="image">
-							<RiMovie2Line className="image-logo" />
-						</span>
+			<div className={activeSidebar ? `left-sidebar active` : `left-sidebar`}>
+				<header className="sidebar-heading">
+					<span>
+						<RiMovie2Line className="sidebar-heading__logo" />
+					</span>
 
-						<div className="text header-text">
-							<div className="name">Unifilm</div>
-							<span className="profession">Movie/TV site</span>
-						</div>
-					</div>
-					<BsArrowRightShort
-						className="toggle"
-						onClick={() => closeSidebar()}
-					/>
+					<h1
+						className={
+							activeSidebar
+								? "sidebar-heading__title"
+								: "sidebar-heading__title hiding"
+						}
+					>
+						Unifilm
+					</h1>
+					{activeSidebar ? (
+						<BsArrowLeftShort
+							className="sidebar-button"
+							onClick={() => toggleSidebar()}
+						/>
+					) : (
+						<BsArrowRightShort
+							className="sidebar-button"
+							onClick={() => toggleSidebar()}
+						/>
+					)}
 				</header>
-
-				<div className="menu-bar">
-					<div className="menu">
-						<li className="search-box">
-							<BsSearch className="icon" />
-							<input
-								type="search"
-								placeholder="Search..."
-								className="search-input text"
-							/>
+				<div className="sidebar-body">
+					<ul className="sidebar-category">
+						<li className="sidebar-category__item">
+							<Link to="/movies">
+								<span>
+									<BiCameraMovie />
+								</span>
+								<h2 className={activeSidebar ? "" : "sub-title-hiding"}>
+									Movies
+								</h2>
+							</Link>
 						</li>
-						<ul className="menu-links">
-							<li className="nav-link">
-								<a href="#">
-									<BiCameraMovie className="icon" />
-									<span className="text nav-text">Movies</span>
-								</a>
-							</li>
-							<li className="nav-link">
-								<a href="#">
-									<TbMovie className="icon" />
-									<span className="text nav-text">TV Shows</span>
-								</a>
-							</li>
-						</ul>
-					</div>
-					<div className="bottom-content">
-						<li className="mode">
-							<div className="toggle-switch" onClick={() => changeTheme()}>
-								<span className="switch"></span>
-							</div>
-							<span className="mode-text text">Dark mode</span>
+						<li className="sidebar-category__item">
+							<Link to="/tv">
+								<span>
+									<TbMovie />
+								</span>
+								<h2 className={activeSidebar ? "" : "sub-title-hiding"}>TV</h2>
+							</Link>
 						</li>
-					</div>
+						<li className="sidebar-category__item">
+							<Link to="/series">
+								<span>
+									<MdOutlineLocalMovies />
+								</span>
+								<h2 className={activeSidebar ? "" : "sub-title-hiding"}>
+									Series
+								</h2>
+							</Link>
+						</li>
+						<li className="sidebar-category__item">
+							<Link to="/cartoons">
+								<span>
+									<RiMovieLine />
+								</span>
+								<h2 className={activeSidebar ? "" : "sub-title-hiding"}>
+									Cartoons
+								</h2>
+							</Link>
+						</li>
+					</ul>
 				</div>
-			</nav>
+				<footer className="sidebar-footer"></footer>
+			</div>
 		</>
 	)
 }

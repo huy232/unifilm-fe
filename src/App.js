@@ -1,12 +1,37 @@
+import React from "react"
+import useLocalStorage from "use-local-storage"
+
 import "./App.css"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 
+import { Routes, Route } from "react-router-dom"
+
+import RecentlyProduct from "./components/RecentlyProduct"
+import Movies from "./components/Movies"
+import TvShows from "./components/TvShows"
+import Series from "./components/Series"
+import Cartoons from "./components/Cartoons"
 function App() {
+	const [theme, setTheme] = useLocalStorage("theme" ? "dark" : "light")
+
+	const switchTheme = () => {
+		const newTheme = theme === "light" ? "dark" : "light"
+		setTheme(newTheme)
+	}
+
 	return (
-		<div className="App">
+		<div className="App" data-theme={theme}>
 			<Header />
-			<div className="content" style={{ height: "120vh", width: "100%" }}></div>
+			<div className="content">
+				<Routes>
+					<Route exact path="/" element={<RecentlyProduct />} />
+					<Route path="/movies" element={<Movies />} />
+					<Route path="/tv" element={<TvShows />} />
+					<Route path="/series" element={<Series />} />
+					<Route path="/cartoons" element={<Cartoons />} />
+				</Routes>
+			</div>
 			<Footer />
 		</div>
 	)
