@@ -7,7 +7,7 @@ import Header from "./components/Header"
 
 import { Routes, Route } from "react-router-dom"
 
-import RecentlyProduct from "./components/RecentlyProduct"
+import Newest from "./components/Newest"
 import Movies from "./components/Movies"
 import TvShows from "./components/TvShows"
 import Series from "./components/Series"
@@ -25,7 +25,7 @@ function App() {
 			<Header />
 			<div className="content">
 				<Routes>
-					<Route exact path="/" element={<RecentlyProduct />} />
+					<Route exact path="/" element={<Newest />} />
 					<Route path="/movies" element={<Movies />} />
 					<Route path="/tv" element={<TvShows />} />
 					<Route path="/series" element={<Series />} />
