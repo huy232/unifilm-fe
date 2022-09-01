@@ -1,0 +1,36 @@
+.footer{
+    top: 0;
+    position: -webkit-sticky;
+    position: sticky;
+    background: var(--primary-color);
+    height: 100vh;
+}
+
+.footer__list{
+    margin: 20px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.footer__list a{
+    padding: 4px;
+    margin-top: 20px;
+    font-size: 36px;
+    color: var(--title-color);
+    text-align: center;
+    border-radius: 12px
+}
+
+.footer__list a:hover{
+    transition: 0.2s;
+    background: var(--primary-color-light)
+}
+
+.footer__list a li{
+    display: flex;
+    justify-content: center;
+    align-items: center
+}

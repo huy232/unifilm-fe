@@ -68,25 +68,63 @@ code {
 
 .holder-item{
   display: flex;
-  flex-wrap: wrap
+  flex-wrap: wrap;
+  justify-content: center
 }
 
 .holder-item .item {
+  margin: 28px;
   transition: 0.4s;
-  text-align: center;
   width: 16.66%;
   height: 448px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
+
+.holder-item .item:hover img{
+  opacity: 0.8
+}
+
+.holder-item .item:hover h3{
+  transition: 0.4s;
+  scale: 1.1
+}
+
+.holder-item .item h4{
+  margin-top: auto;
+  margin-bottom: 20px
 }
 
 .holder-item .item img {
-  text-align: center;
-  width: 70%;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  cursor: pointer;
+  display: block;
+  width: 80%;
   height: 70%;
+  margin: 0 auto;
+  transition: 0.3s;
 }
 
 .holder-item .item h3 {
-  text-align: center;
-  font-size: 18px
+  cursor: pointer;
+  display: -webkit-box;
+  font-size: 20px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 4px;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2
+}
+
+.item__tooltip-text {
+  visibility: hidden;
+}
+
+.holder-item .item h4 {
+  font-size: 14px;
 }
 
 
