@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
+import { UNIFILM_API } from "../../constants/constants"
 
-function RecentlyProduct() {
+function Newest() {
 	const [newestData, setNewestData] = useState([])
-	const newestUrl = "https://unifilm-backend.herokuapp.com/api/update-film"
+	const newestUrl = `${UNIFILM_API}/update-film`
 
 	useEffect(() => {
 		const CancelToken = axios.CancelToken
@@ -12,7 +13,7 @@ function RecentlyProduct() {
 		axios
 			.get(newestUrl, { cancelToken: source.token })
 			.then((data) => {
-				setNewestData(data)
+				setNewestData(data.data.data.items)
 			})
 			.catch((thrown) => {
 				if (axios.isCancel(thrown)) return
@@ -21,10 +22,22 @@ function RecentlyProduct() {
 
 	return (
 		<>
-			{console.log(newestData)}
-			<div className="display">THIS IS RECENTLY PRODUCT PAGE</div>
+			<h2>PHIM MỚI CẬP NHẬT</h2>
+			<div className="holder-item">
+				{newestData.map((item, i) => {
+					return (
+						<div className="item" key={i}>
+							<img
+								src={`https://ophim.cc/_next/image?url=https%3A%2F%2Fimg.ophim.cc%2Fuploads%2Fmovies%2F${item.thumb_url}&w=192&q=75`}
+								alt=""
+							/>
+							<h3>{item.name}</h3>
+						</div>
+					)
+				})}
+			</div>
 		</>
 	)
 }
 
-export default RecentlyProduct
+export default Newest

@@ -19,19 +19,20 @@ function Header() {
 		<>
 			<div className={activeSidebar ? `left-sidebar active` : `left-sidebar`}>
 				<header className="sidebar-heading">
-					<span>
-						<RiMovie2Line className="sidebar-heading__logo" />
-					</span>
-
-					<h1
-						className={
-							activeSidebar
-								? "sidebar-heading__title"
-								: "sidebar-heading__title hiding"
-						}
-					>
-						Unifilm
-					</h1>
+					<Link to="/">
+						<span>
+							<RiMovie2Line className="sidebar-heading__logo" />
+						</span>
+						<h1
+							className={
+								activeSidebar
+									? "sidebar-heading__title"
+									: "sidebar-heading__title hiding"
+							}
+						>
+							Unifilm
+						</h1>
+					</Link>
 					{activeSidebar ? (
 						<BsArrowLeftShort
 							className="sidebar-button"
@@ -51,7 +52,9 @@ function Header() {
 								<span>
 									<BiCameraMovie />
 								</span>
-								<h2 className={activeSidebar ? "" : "sub-title-hiding"}>
+								<h2
+									className={activeSidebar ? "navbar-item" : "sub-title-hiding"}
+								>
 									Movies
 								</h2>
 							</Link>
@@ -61,7 +64,11 @@ function Header() {
 								<span>
 									<TbMovie />
 								</span>
-								<h2 className={activeSidebar ? "" : "sub-title-hiding"}>TV</h2>
+								<h2
+									className={activeSidebar ? "navbar-item" : "sub-title-hiding"}
+								>
+									TV
+								</h2>
 							</Link>
 						</li>
 						<li className="sidebar-category__item">
@@ -69,7 +76,9 @@ function Header() {
 								<span>
 									<MdOutlineLocalMovies />
 								</span>
-								<h2 className={activeSidebar ? "" : "sub-title-hiding"}>
+								<h2
+									className={activeSidebar ? "navbar-item" : "sub-title-hiding"}
+								>
 									Series
 								</h2>
 							</Link>
@@ -79,14 +88,16 @@ function Header() {
 								<span>
 									<RiMovieLine />
 								</span>
-								<h2 className={activeSidebar ? "" : "sub-title-hiding"}>
+								<h2
+									className={activeSidebar ? "navbar-item" : "sub-title-hiding"}
+								>
 									Cartoons
 								</h2>
 							</Link>
 						</li>
 					</ul>
 				</div>
-				<footer className="sidebar-footer"></footer>
+				<footer className="sidebar-footer">AAA</footer>
 			</div>
 		</>
 	)

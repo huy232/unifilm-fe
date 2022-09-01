@@ -1,10 +1,15 @@
 
 .left-sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 0;
     background-color: var(--primary-color);
     color: var(--title-color);
     height: 100vh;
     width: 100px;
-    position: relative;
+    position: -webkit-sticky;
+    position: sticky;
     transition: var(--tran-02);
 }
 
@@ -13,18 +18,69 @@
 }
 
 .sidebar-heading{
+    margin-top: 14px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .sidebar-heading__logo{
     width: 70px;
     height: 70px;
-    margin-right: 16px
+}
+
+.sidebar-heading a {
+    color: var(--title-color);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar-heading a span {
+    text-decoration: none;
+    color: inherit;
+}
+
+.sidebar-heading a span {
+    border-radius: 18px;
+    transition: 0.2s;
+}
+
+.sidebar-heading a h1 {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: inherit
+}
+
+.sidebar-heading a h1:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.sidebar-heading a h1:hover:after {
+    transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.sidebar-heading span:hover {
+    opacity: 1;
+    background-color: var(--sidebar-color)
 }
 
 .sidebar-heading__title{
-    font-weight: 700;
+    font-size: 32px;
+    margin-left: 6px;
+    font-weight: 700
 }
 
 .sidebar-heading__title.hiding{
@@ -34,12 +90,12 @@
 .sidebar-button{
     cursor: pointer;
     border-radius: 22px;
-    font-size: 42px;
+    font-size: 28px;
     background-color: var(--toggle-color);
     color: var(--title-color);
     position: absolute;
     right: 0;
-    margin: auto -10px;
+    margin: auto -18px;
 }
 
 .sidebar-button:hover{
@@ -47,7 +103,8 @@
 }
 
 .sidebar-body{
-    text-align: center;
+    margin-bottom: calc(100%/3);
+    text-align: center
 }
 
 .sidebar-category{
@@ -96,4 +153,30 @@
 
 .sub-title-hiding {
     display: none
+}
+
+
+/* BREAKPOINT */
+
+@media screen and (max-width: 1366px){
+    .sidebar-heading__logo{
+        width: 50px;
+        height: 50px;
+    }
+    
+    .navbar-item{
+        display: none
+    }
+
+    .sidebar-heading a h1{
+        display: none
+    }
+
+    .left-sidebar, .left-sidebar.active{
+        width: 100px;
+    }
+
+    .sidebar-button{
+        display: none;
+    }
 }

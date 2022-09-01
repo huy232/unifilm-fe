@@ -1,3 +1,5 @@
-const unifilmUrl = "https://unifilm-backend.herokuapp.com/api"
+const UNIFILM_API = "https://unifilm-backend.herokuapp.com/api"
 
-export default unifilmUrl
+module.exports = {
+	UNIFILM_API,
+}
