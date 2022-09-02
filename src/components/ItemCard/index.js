@@ -3,7 +3,6 @@ import React from "react"
 function ItemCard({ items }) {
 	return (
 		<>
-			{console.log(items)}
 			{items.map((item, i) => {
 				return (
 					<div className="item" key={i}>

@@ -45,7 +45,8 @@ code {
   --primary-color-light: #f6f5ff;
   --toggle-color: #DDD;
   --text-color: #707070;
-  --title-color: #161111
+  --title-color: #161111;
+  --pagination: #867ef3;
 
   /* Transitions */;
   --tran-02: all 0.2s ease;
@@ -63,7 +64,8 @@ code {
   --primary-color-light: #3A3B3C;
   --toggle-color: #FFF;
   --text-color: #CCC;
-  --title-color: #695cfe
+  --title-color: #695cfe;
+  --pagination: #0c0a27;
 }
 
 .holder-item{
@@ -125,6 +127,28 @@ code {
 
 .holder-item .item h4 {
   font-size: 14px;
+}
+
+.pagination ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: center
+}
+
+.pagination ul li {
+  margin: 10px 8px 60px 8px 
+}
+
+.pagination ul li a {
+  font-size: 24px;
+  padding: 12px 24px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: var(--tran-03)
+}
+
+.pagination ul li a:hover{
+  background: var(--pagination)
 }
 
 
