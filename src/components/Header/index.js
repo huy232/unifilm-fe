@@ -5,10 +5,10 @@ import { BsArrowRightShort, BsArrowLeftShort, BsStar } from "react-icons/bs"
 import { BiCameraMovie } from "react-icons/bi"
 import { TbMovie } from "react-icons/tb"
 import { RiMovieLine } from "react-icons/ri"
-import { MdOutlineLocalMovies } from "react-icons/md"
+import { MdOutlineLocalMovies, MdOutlineDarkMode } from "react-icons/md"
 import "./header.css"
 
-function Header() {
+function Header({ switchTheme }) {
 	const [activeSidebar, setActiveSidebar] = useState(true)
 
 	const toggleSidebar = () => {
@@ -47,7 +47,7 @@ function Header() {
 				</header>
 				<div className="sidebar-body">
 					<ul className="sidebar-category">
-						<li className="sidebar-category__item">
+						<li className="sidebar-category__item" title="Movies">
 							<Link to="/movies">
 								<span>
 									<BiCameraMovie />
@@ -59,7 +59,7 @@ function Header() {
 								</h2>
 							</Link>
 						</li>
-						<li className="sidebar-category__item">
+						<li className="sidebar-category__item" title="TV">
 							<Link to="/tv">
 								<span>
 									<TbMovie />
@@ -71,7 +71,7 @@ function Header() {
 								</h2>
 							</Link>
 						</li>
-						<li className="sidebar-category__item">
+						<li className="sidebar-category__item" title="Series">
 							<Link to="/series">
 								<span>
 									<MdOutlineLocalMovies />
@@ -83,7 +83,7 @@ function Header() {
 								</h2>
 							</Link>
 						</li>
-						<li className="sidebar-category__item">
+						<li className="sidebar-category__item" title="Cartoons/Anime">
 							<Link to="/cartoons">
 								<span>
 									<RiMovieLine />
@@ -97,7 +97,20 @@ function Header() {
 						</li>
 					</ul>
 				</div>
-				<footer className="sidebar-footer">AAA</footer>
+				<footer className="sidebar-footer" onClick={switchTheme}>
+					<div className="dark-mode-btn">
+						<div className="dark-mode-holder">
+							<MdOutlineDarkMode className="dark-mode-icon" />
+							<p
+								className={
+									activeSidebar ? "dark-mode-text active" : "dark-mode-text"
+								}
+							>
+								DARK MODE
+							</p>
+						</div>
+					</div>
+				</footer>
 			</div>
 		</>
 	)

@@ -1,3 +1,5 @@
 .App {
+    background: var(--body-color);
     display: flex;
+    transition: var(--tran-03);
 }

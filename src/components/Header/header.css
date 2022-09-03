@@ -91,8 +91,8 @@
     cursor: pointer;
     border-radius: 22px;
     font-size: 28px;
-    background-color: var(--toggle-color);
-    color: var(--title-color);
+    background-color: var(--sidebar-button);
+    color: var(--sidebar-arrow);
     position: absolute;
     right: 0;
     margin: auto -18px;
@@ -153,6 +153,41 @@
 
 .sub-title-hiding {
     display: none
+}
+
+.dark-mode-btn{
+    margin-bottom: 20px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.dark-mode-text{
+    margin-left: 6px;
+    color: var(--title-color);
+    display: none;
+}
+
+.dark-mode-text.active{
+    display: block;
+}
+
+.dark-mode-holder{
+    border-radius: 18px;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition: var(--tran-02);
+}
+
+.dark-mode-holder:hover{
+    background: var(--sidebar-color);
 }
 
 

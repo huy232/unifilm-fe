@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import axios from "axios"
 import { UNIFILM_API } from "../../constants/constants"
 import ReactPaginate from "react-paginate"
-import { GrFormPrevious, GrFormNext } from "react-icons/gr"
+import { BsArrowRightSquare, BsArrowLeftSquare } from "react-icons/bs"
 
 import ItemCard from "../ItemCard"
 
@@ -16,7 +16,7 @@ function Cartoons() {
 	useEffect(() => {
 		const CancelToken = axios.CancelToken
 		const source = CancelToken.source()
-
+		document.title = "Unifilm - Cartoons/Anime"
 		axios
 			.get(`${cartoonsUrl}?page=${page}`, { cancelToken: source.token })
 			.then((data) => {
@@ -46,11 +46,11 @@ function Cartoons() {
 			<div className="pagination">
 				<ReactPaginate
 					breakLabel="..."
-					nextLabel={<GrFormNext />}
+					nextLabel={<BsArrowRightSquare />}
 					onPageChange={handlePageClick}
 					pageRangeDisplayed={2}
 					pageCount={pageCount}
-					previousLabel={<GrFormPrevious />}
+					previousLabel={<BsArrowLeftSquare />}
 					renderOnZeroPageCount={null}
 				/>
 			</div>

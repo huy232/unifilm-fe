@@ -12,6 +12,7 @@ import Movies from "./components/Movies"
 import TvShows from "./components/TvShows"
 import Series from "./components/Series"
 import Cartoons from "./components/Cartoons"
+import Watch from "./components/Watch"
 function App() {
 	const [theme, setTheme] = useLocalStorage("theme" ? "dark" : "light")
 
@@ -22,7 +23,7 @@ function App() {
 
 	return (
 		<div className="App" data-theme={theme}>
-			<Header />
+			<Header switchTheme={switchTheme} />
 			<div className="content">
 				<Routes>
 					<Route exact path="/" element={<Newest />} />
@@ -30,6 +31,7 @@ function App() {
 					<Route path="/tv" element={<TvShows />} />
 					<Route path="/series" element={<Series />} />
 					<Route path="/cartoons" element={<Cartoons />} />
+					<Route path="/watch/:slug" element={<Watch />} />
 				</Routes>
 			</div>
 			<Footer />

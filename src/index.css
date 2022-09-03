@@ -25,12 +25,15 @@ code {
     monospace;
 }
 
+
+
 .content{
   margin: 20px 30px 0 30px;
   width: 100%
 }
 
 .content h2{
+  color: var(--main-title);
   transition: 0.2s;
   font-size: 48px;
   margin: 20px 0;
@@ -39,14 +42,20 @@ code {
 
 :root{
   /* Colors */
+  --main-title: #9b5300;
   --body-color: #e4e9f7;
-  --sidebar-color: #FFF;
+  --sidebar-color: #e2e2e2;
   --primary-color: #695cfe;
   --primary-color-light: #f6f5ff;
-  --toggle-color: #DDD;
-  --text-color: #707070;
+  --toggle-color: #0a0a0a;
+  --text-color: #351717;
+  --sub-text-color: #289712;
   --title-color: #161111;
   --pagination: #867ef3;
+  --pagination-text: #252525;
+  --sidebar-button: #dddddd;
+  --sidebar-arrow: #695cfe;
+  --episode-color: #0a0808;
 
   /* Transitions */;
   --tran-02: all 0.2s ease;
@@ -58,15 +67,40 @@ code {
 
 
 [data-theme='dark']{
+  --main-title: #ff8800;
   --body-color: #18191A;
-  --sidebar-color: #242526;
+  --sidebar-color: #e2e2e2;
   --primary-color: #3A3B3C;
-  --primary-color-light: #3A3B3C;
-  --toggle-color: #FFF;
-  --text-color: #CCC;
+  --primary-color-light: #f5f8fc;
+  --toggle-color: #dddddd;
+  --text-color: #9c5f0f;
+  --sub-text-color: #922464;
   --title-color: #695cfe;
-  --pagination: #0c0a27;
+  --pagination: #867ef3;
+  --pagination-text: #e2e2e2;
+  --sidebar-button: #dddddd;
+  --sidebar-arrow: #695cfe;
+  --episode-color: #d8d8d8;
 }
+
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--title-color); 
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--main-title); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: red 
+}
+/*  */
 
 .holder-item{
   display: flex;
@@ -111,6 +145,7 @@ code {
 }
 
 .holder-item .item .bottom-item h4:nth-child(2) {
+  color: var(--toggle-color);
   padding: 6px;
   border-right: 2px solid rgb(163, 50, 50);
   border-bottom: 2px solid rgb(163, 50, 50);
@@ -122,12 +157,13 @@ code {
   cursor: pointer;
   display: block;
   width: 80%;
-  height: 70%;
+  height: 100%;
   margin: 0 auto;
   transition: 0.3s;
 }
 
 .holder-item .item h3 {
+  color: var(--text-color);
   cursor: pointer;
   display: -webkit-box;
   font-size: 20px;
@@ -139,11 +175,17 @@ code {
   -webkit-line-clamp: 2
 }
 
+.item-wrapper{
+  height: 320px;
+  text-decoration: none;
+}
+
 .item__tooltip-text {
   visibility: hidden;
 }
 
 .item-origin-name{
+  color: var(--sub-text-color);
   cursor: pointer;
   display: -webkit-box;
   overflow: hidden;
@@ -160,6 +202,10 @@ code {
   font-size: 14px;
 }
 
+.pagination{
+  margin-top: 40px;
+}
+
 .pagination ul {
   display: flex;
   list-style-type: none;
@@ -171,11 +217,16 @@ code {
 }
 
 .pagination ul li a {
+  color: var(--pagination-text);
   font-size: 24px;
   padding: 12px 24px;
   border-radius: 16px;
   cursor: pointer;
   transition: var(--tran-03)
+}
+
+.pagination ul li a svg {
+  color: var(--pagination-text)
 }
 
 .pagination ul li a:hover{
@@ -185,6 +236,12 @@ code {
 .pagination ul li.selected a{
   opacity: 0.8;
   background: var(--pagination)
+}
+
+.pagination ul li a svg {
+  position: relative;
+  top: 50%;
+  transform: translateY(-55%);
 }
 
 
@@ -199,7 +256,7 @@ code {
 
 @media screen and (min-width:1024px) and (max-width:1366px) {
   .content h2{
-    font-size: 30px;
+    font-size: 30px
   }
   .holder-item .item {
     width: 33.33%;

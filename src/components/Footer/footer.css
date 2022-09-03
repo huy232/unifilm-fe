@@ -3,12 +3,11 @@
     position: -webkit-sticky;
     position: sticky;
     background: var(--primary-color);
-    height: 100vh;
 }
 
 .footer__list{
     height: 100vh;
-    margin: 2px;
+    margin: 0 2px;
     list-style-type: none;
     display: flex;
     flex-direction: column;
@@ -17,6 +16,7 @@
 }
 
 .footer__list a{
+    cursor: pointer;
     padding: 4px;
     margin-top: 20px;
     font-size: 36px;
@@ -46,6 +46,7 @@
 }
 
 .go-up-icon svg {
+    color: var(--title-color);
     border-radius: 6px;
     padding: 10px;
 }
