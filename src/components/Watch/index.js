@@ -18,27 +18,32 @@ function Watch() {
 
 		axios
 			.get(`${FILM_API}/${slug}`, { cancelToken: source.token })
-			.then((data) => setFilmData(data.data))
-	}, [filmData, iframeSource])
+			.then((data) => {
+				document.title = `Unifilm - ${data.data.movie.name}`
+				setFilmData(data.data)
+			})
+	}, [filmData, iframeSource, slug])
 
 	const handleEpisode = (iFrameSource, episodeName) => {
 		setActiveEpisode(episodeName)
 		setiFrameSource(iFrameSource)
 	}
+
 	return (
 		<>
+			<div className="film-content">
+				<h1>{filmData?.movie?.name}</h1>
+			</div>
 			<iframe
 				src={iframeSource}
 				title={`${filmData?.movie?.name}`}
 				style={{ border: "none" }}
-				allowFullScreen="true"
-				webkitallowfullscreen="true"
-				mozallowfullscreen="true"
+				allowFullScreen={true}
 			></iframe>
 			<ul className="list-episode">
 				{filmData?.episodes?.[0].server_data.map((episode) => (
 					<li
-						className={episode.name == activeEpisode ? "active" : ""}
+						className={episode.name == activeEpisode ? "selected" : ""}
 						key={episode.name}
 						onClick={() => handleEpisode(episode.link_embed, episode.name)}
 					>
