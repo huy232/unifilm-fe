@@ -31,7 +31,7 @@ function TvShows() {
 			.catch((thrown) => {
 				if (axios.isCancel(thrown)) return
 			})
-	}, [page])
+	}, [page, tvShowsData])
 
 	const handlePageClick = (event) => {
 		setPage(event.selected + 1)

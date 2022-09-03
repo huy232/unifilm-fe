@@ -31,7 +31,7 @@ function Newest() {
 			.catch((thrown) => {
 				if (axios.isCancel(thrown)) return
 			})
-	}, [page])
+	}, [page, newestData])
 
 	const handlePageClick = (event) => {
 		setPage(event.selected + 1)
