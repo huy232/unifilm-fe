@@ -78,24 +78,42 @@ code {
   margin: 28px;
   transition: 0.4s;
   width: 16.66%;
-  height: 448px;
+  height: 460px;
   display: flex;
   flex-direction: column;
   justify-content: space-between
 }
 
 .holder-item .item:hover img{
+  scale: 0.95;
   opacity: 0.8
 }
 
 .holder-item .item:hover h3{
   transition: 0.4s;
-  scale: 1.1
+  scale: 1.05
 }
 
-.holder-item .item h4{
-  margin-top: auto;
-  margin-bottom: 20px
+.bottom-item{
+  width: 85%;
+}
+
+.holder-item .item .bottom-item{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: auto
+}
+
+.holder-item .item .bottom-item h4:nth-child(1){
+  padding: 6px;
+  border-radius: 12px;
+}
+
+.holder-item .item .bottom-item h4:nth-child(2) {
+  padding: 6px;
+  border-right: 2px solid rgb(163, 50, 50);
+  border-bottom: 2px solid rgb(163, 50, 50);
 }
 
 .holder-item .item img {
@@ -125,6 +143,19 @@ code {
   visibility: hidden;
 }
 
+.item-origin-name{
+  cursor: pointer;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  margin: 0 auto;
+  margin-top: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  width: 80%;
+}
+
 .holder-item .item h4 {
   font-size: 14px;
 }
@@ -151,6 +182,11 @@ code {
   background: var(--pagination)
 }
 
+.pagination ul li.selected a{
+  opacity: 0.8;
+  background: var(--pagination)
+}
+
 
 
 /* BREAKPOINT FOR MAIN CONTENT */
@@ -170,6 +206,16 @@ code {
   }
 }
 
+@media screen and (max-width: 1280px) {
+  .pagination ul li{
+    display: none
+  }
+
+  .pagination ul li.previous, .pagination ul li.next{
+    display: list-item;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .content h2{
     font-size: 28px;
@@ -186,4 +232,13 @@ code {
   .holder-item .item{
     width: 100%;
   }
+
+  .pagination ul li{
+    display: none
+  }
+
+  .pagination ul li.previous, .pagination ul li.next{
+    display: list-item;
+  }
+  
 }

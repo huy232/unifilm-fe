@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import axios from "axios"
 import { UNIFILM_API } from "../../constants/constants"
 import ReactPaginate from "react-paginate"
+import { GrFormPrevious, GrFormNext } from "react-icons/gr"
 
 import ItemCard from "../ItemCard"
 
@@ -45,11 +46,11 @@ function Newest() {
 			<div className="pagination">
 				<ReactPaginate
 					breakLabel="..."
-					nextLabel="NEXT"
+					nextLabel={<GrFormNext />}
 					onPageChange={handlePageClick}
 					pageRangeDisplayed={2}
 					pageCount={pageCount}
-					previousLabel="PREVIOUS"
+					previousLabel={<GrFormPrevious />}
 					renderOnZeroPageCount={null}
 				/>
 			</div>

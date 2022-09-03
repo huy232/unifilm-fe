@@ -7,11 +7,12 @@
 }
 
 .footer__list{
-    margin: 20px;
+    height: 100vh;
+    margin: 2px;
     list-style-type: none;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center
 }
 
@@ -38,9 +39,7 @@
 .go-up-icon{
     display: block;
     width: 100%;
-    bottom: 0;
-    left: 0;
-    position: absolute;
+    margin-top: auto;
     text-align: center;
     margin-bottom: 20px;
     font-size: 50px;
