@@ -208,10 +208,14 @@
     }
 
     .left-sidebar, .left-sidebar.active{
-        width: 100px;
+        width: 50px;
     }
 
     .sidebar-button{
+        display: none;
+    }
+
+    .dark-mode-text, .dark-mode-text.active{
         display: none;
     }
 }

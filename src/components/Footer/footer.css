@@ -1,4 +1,6 @@
 .footer{
+    width: 52px;
+    height: 100vh;
     top: 0;
     position: -webkit-sticky;
     position: sticky;

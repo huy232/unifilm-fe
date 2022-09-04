@@ -19,7 +19,7 @@ function Header({ switchTheme }) {
 		<>
 			<div className={activeSidebar ? `left-sidebar active` : `left-sidebar`}>
 				<header className="sidebar-heading">
-					<Link to="/">
+					<Link to="/" reloadDocument>
 						<span>
 							<RiMovie2Line className="sidebar-heading__logo" />
 						</span>
@@ -48,7 +48,7 @@ function Header({ switchTheme }) {
 				<div className="sidebar-body">
 					<ul className="sidebar-category">
 						<li className="sidebar-category__item" title="Movies">
-							<Link to="/movies">
+							<Link to="/movies" reloadDocument>
 								<span>
 									<BiCameraMovie />
 								</span>
@@ -60,7 +60,7 @@ function Header({ switchTheme }) {
 							</Link>
 						</li>
 						<li className="sidebar-category__item" title="TV">
-							<Link to="/tv">
+							<Link to="/tv" reloadDocument>
 								<span>
 									<TbMovie />
 								</span>
@@ -72,7 +72,7 @@ function Header({ switchTheme }) {
 							</Link>
 						</li>
 						<li className="sidebar-category__item" title="Series">
-							<Link to="/series">
+							<Link to="/series" reloadDocument>
 								<span>
 									<MdOutlineLocalMovies />
 								</span>
@@ -84,7 +84,7 @@ function Header({ switchTheme }) {
 							</Link>
 						</li>
 						<li className="sidebar-category__item" title="Cartoons/Anime">
-							<Link to="/cartoons">
+							<Link to="/cartoons" reloadDocument>
 								<span>
 									<RiMovieLine />
 								</span>
