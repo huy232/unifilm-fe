@@ -31,7 +31,7 @@ function Movies() {
 			.catch((thrown) => {
 				if (axios.isCancel(thrown)) return
 			})
-	}, [page, moviesData])
+	}, [page])
 
 	const handlePageClick = (event) => {
 		setPage(event.selected + 1)

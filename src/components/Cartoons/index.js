@@ -31,7 +31,7 @@ function Cartoons() {
 			.catch((thrown) => {
 				if (axios.isCancel(thrown)) return
 			})
-	}, [page, cartoonsData])
+	}, [page])
 
 	const handlePageClick = (event) => {
 		setPage(event.selected + 1)
