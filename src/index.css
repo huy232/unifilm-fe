@@ -258,9 +258,9 @@ code {
   .content h2{
     font-size: 30px
   }
-  .holder-item .item {
+  /* .holder-item .item {
     width: 33.33%;
-  }
+  } */
 }
 
 @media screen and (max-width: 1280px) {

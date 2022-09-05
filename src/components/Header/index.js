@@ -1,7 +1,7 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { RiMovie2Line } from "react-icons/ri"
-import { BsArrowRightShort, BsArrowLeftShort, BsStar } from "react-icons/bs"
+import { BsArrowRightShort, BsArrowLeftShort } from "react-icons/bs"
 import { BiCameraMovie } from "react-icons/bi"
 import { TbMovie } from "react-icons/tb"
 import { RiMovieLine } from "react-icons/ri"
@@ -9,7 +9,13 @@ import { MdOutlineLocalMovies, MdOutlineDarkMode } from "react-icons/md"
 import "./header.css"
 
 function Header({ switchTheme }) {
-	const [activeSidebar, setActiveSidebar] = useState(true)
+	const [activeSidebar, setActiveSidebar] = useState(
+		localStorage.getItem("active-sidebar") === "true"
+	)
+
+	useEffect(() => {
+		localStorage.setItem("active-sidebar", activeSidebar)
+	}, [activeSidebar])
 
 	const toggleSidebar = () => {
 		setActiveSidebar(!activeSidebar)
@@ -19,7 +25,7 @@ function Header({ switchTheme }) {
 		<>
 			<div className={activeSidebar ? `left-sidebar active` : `left-sidebar`}>
 				<header className="sidebar-heading">
-					<Link to="/" reloadDocument>
+					<Link to="/">
 						<span>
 							<RiMovie2Line className="sidebar-heading__logo" />
 						</span>
