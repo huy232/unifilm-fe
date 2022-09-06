@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import axios from "axios"
-import { FILM_API } from "../../constants/constants"
+import { FILM_API } from "../../constants/"
 
 import "./watch.css"
 
@@ -53,13 +53,18 @@ function Watch() {
 						allowFullScreen={true}
 					></iframe>
 					<ul className="list-episode">
-						{filmData?.episodes?.[0].server_data.map((episode) => (
+						{filmData?.episodes?.[0].server_data.map((episode, i) => (
 							<li
 								className={episode.name == activeEpisode ? "selected" : ""}
 								key={episode.name}
-								onClick={() => handleEpisode(episode.link_embed, episode.name)}
 							>
-								<p>{episode.filename}</p>
+								<p
+									onClick={() =>
+										handleEpisode(episode.link_embed, episode.name)
+									}
+								>
+									Episode {i}
+								</p>
 							</li>
 						))}
 					</ul>

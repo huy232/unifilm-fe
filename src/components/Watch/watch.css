@@ -50,16 +50,17 @@ iframe{
     overflow: hidden;
     overflow-y: scroll;
     display: flex;
-    flex-direction: column;
-    align-items: center
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .list-episode li{
-    cursor: pointer;
+    width: 20%;
     transition: var(--tran-02);
 }
 
 .list-episode li p {
+    cursor: pointer;
     margin: 4px;
     padding: 8px;
     border-radius: 12px;

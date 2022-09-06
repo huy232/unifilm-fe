@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 function ItemCard({ items }) {
 	return (
 		<>
-			{items.map((item, i) => {
+			{items?.pageData.map((item, i) => {
 				if (item.category[0].slug !== "phim-18") {
 					return (
 						<div className="item" key={item._id}>

@@ -213,13 +213,13 @@ code {
 }
 
 .pagination ul li {
-  margin: 10px 8px 60px 8px 
+  margin: 10px 4px 10px 4px 
 }
 
 .pagination ul li a {
   color: var(--pagination-text);
   font-size: 24px;
-  padding: 12px 24px;
+  padding: 8px 16px;
   border-radius: 16px;
   cursor: pointer;
   transition: var(--tran-03)
@@ -244,7 +244,46 @@ code {
   transform: translateY(-55%);
 }
 
+.pagination form{
+  margin-bottom: 20px;
+  text-align: center;
+}
 
+.pagination form input[type=number]::-webkit-inner-spin-button, .pagination form input[type=number]::-webkit-outer-spin-button{
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+          margin: 0;
+}
+
+.pagination form input[type=number]::-webkit-input-placeholder{
+  color: var(--primary-color-light);
+}
+
+.pagination form input{
+  color: var(--primary-color-light);
+  background: var(--title-color);
+  margin-right: 14px;
+  padding: 4px;
+  text-align: center;
+  width: 10%;
+  border-radius: 26px;
+  border: none
+}
+
+.pagination form button{
+  cursor: pointer;
+  color: var(--primary-color-light);
+  background: var(--pagination);
+  border: none;
+  padding: 4px;
+  border-radius: 4px;
+  transition: var(--tran-03)
+}
+
+.pagination form button:hover{
+  opacity: 0.8
+}
 
 /* BREAKPOINT FOR MAIN CONTENT */
 

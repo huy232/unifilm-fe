@@ -1,4 +1,4 @@
-import React from "react"
+import { useRef } from "react"
 import useLocalStorage from "use-local-storage"
 
 import "./App.css"
@@ -7,12 +7,12 @@ import Header from "./components/Header"
 
 import { Routes, Route } from "react-router-dom"
 
-import Newest from "./components/Newest"
-import Movies from "./components/Movies"
-import TvShows from "./components/TvShows"
-import Series from "./components/Series"
-import Cartoons from "./components/Cartoons"
 import Watch from "./components/Watch"
+import SearchBox from "./components/SearchBox"
+import Search from "./components/Search"
+
+import FilmLayout from "./components/FilmLayout"
+
 function App() {
 	const [theme, setTheme] = useLocalStorage("theme" ? "dark" : "light")
 
@@ -20,18 +20,19 @@ function App() {
 		const newTheme = theme === "light" ? "dark" : "light"
 		setTheme(newTheme)
 	}
-
 	return (
 		<div className="App" data-theme={theme}>
 			<Header switchTheme={switchTheme} />
 			<div className="content">
+				{/* <SearchBox /> */}
 				<Routes>
-					<Route exact path="/" element={<Newest />} />
-					<Route path="/movies" element={<Movies />} />
-					<Route path="/tv" element={<TvShows />} />
-					<Route path="/series" element={<Series />} />
-					<Route path="/cartoons" element={<Cartoons />} />
+					<Route exact path="/" element={<FilmLayout />} />
+					<Route path="/movies" element={<FilmLayout />} />
+					<Route path="/tv" element={<FilmLayout />} />
+					<Route path="/series" element={<FilmLayout />} />
+					<Route path="/cartoons" element={<FilmLayout />} />
 					<Route path="/watch/:slug" element={<Watch />} />
+					{/* <Route path="/search" element={<Search />} /> */}
 				</Routes>
 			</div>
 			<Footer />
