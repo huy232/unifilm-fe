@@ -4,7 +4,7 @@ import { UNIFILM_API, PATHNAME } from "../../constants"
 import ReactPaginate from "react-paginate"
 import { BsArrowRightSquare, BsArrowLeftSquare } from "react-icons/bs"
 import { useLocation } from "react-router-dom"
-
+import SkeletonLayout from "../SkeletonLayout"
 import ItemCard from "../ItemCard"
 
 const FilmLayout = () => {
@@ -76,32 +76,38 @@ const FilmLayout = () => {
 	return (
 		<>
 			<h2>{PATHNAME[location.pathname]}</h2>
-			<div className="holder-item">
-				<ItemCard items={data} />
-			</div>
-			<div className="pagination">
-				<ReactPaginate
-					ref={pageRef}
-					breakLabel="..."
-					nextLabel={<BsArrowRightSquare />}
-					onPageChange={handlePageClick}
-					pageRangeDisplayed={2}
-					pageCount={data.pageCount}
-					previousLabel={<BsArrowLeftSquare />}
-					renderOnZeroPageCount={null}
-				/>
-				<form onSubmit={(e) => handlePageInput(e)}>
-					<input
-						type="number"
-						min="1"
-						max={data.pageCount}
-						placeholder="Enter page number"
-						pattern="[-]?[0-9]*[.,]?[0-9]+"
-						inputMode="decimal"
-					/>
-					<button type="submit">GO</button>
-				</form>
-			</div>
+			{data.pageData.length === 0 ? (
+				<SkeletonLayout />
+			) : (
+				<>
+					<div className="holder-item">
+						<ItemCard items={data} />
+					</div>
+					<div className="pagination">
+						<ReactPaginate
+							ref={pageRef}
+							breakLabel="..."
+							nextLabel={<BsArrowRightSquare />}
+							onPageChange={handlePageClick}
+							pageRangeDisplayed={2}
+							pageCount={data.pageCount}
+							previousLabel={<BsArrowLeftSquare />}
+							renderOnZeroPageCount={null}
+						/>
+						<form onSubmit={(e) => handlePageInput(e)}>
+							<input
+								type="number"
+								min="1"
+								max={data.pageCount}
+								placeholder="Enter page number"
+								pattern="[-]?[0-9]*[.,]?[0-9]+"
+								inputMode="decimal"
+							/>
+							<button type="submit">GO</button>
+						</form>
+					</div>
+				</>
+			)}
 		</>
 	)
 }

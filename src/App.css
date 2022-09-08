@@ -2,4 +2,5 @@
     background: var(--body-color);
     display: flex;
     transition: var(--tran-03);
+    justify-content: space-between;
 }

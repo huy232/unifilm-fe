@@ -1,0 +1,13 @@
+.holder-item .skeleton-image{
+    width: 100%;
+    height: 320px;
+}
+
+.holder-item .bottom-item span{
+    width: 100%;
+}
+
+.holder-item .skeleton-line{
+    width: 100%;
+    height: 20px;
+}

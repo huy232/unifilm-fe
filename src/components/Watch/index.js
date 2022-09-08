@@ -41,7 +41,7 @@ function Watch() {
 			<div className="film-content">
 				<h1>{data?.filmData?.movie?.name}</h1>
 			</div>
-			{data?.filmData?.movie?.status == "trailer" ? (
+			{data?.filmData?.movie?.status === "trailer" ? (
 				<>
 					<p className="not-update">PHIM ĐANG CẬP NHẬT, HIỆN CHƯA CÓ</p>
 					<div className="button-holder">
@@ -59,10 +59,10 @@ function Watch() {
 						allowFullScreen={true}
 					></iframe>
 					<ul className="list-episode">
-						{data?.filmData?.episodes?.[0].server_data.map((episode, i) => (
+						{data?.filmData?.episodes?.[0].server_data.map((episode) => (
 							<li
 								className={
-									episode.name == data?.activeEpisode ? "selected" : ""
+									episode.name === data?.activeEpisode ? "selected" : ""
 								}
 								key={episode.name}
 							>
@@ -71,7 +71,7 @@ function Watch() {
 										handleEpisode(episode.link_embed, episode.name)
 									}
 								>
-									Episode {i}
+									Episode {episode.name}
 								</p>
 							</li>
 						))}

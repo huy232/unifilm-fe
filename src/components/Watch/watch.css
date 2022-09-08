@@ -41,6 +41,7 @@ iframe{
 }
 
 .list-episode{
+    text-align: center;
     color: var(--episode-color);
     margin-top: 20px;
     text-decoration: none;
@@ -55,27 +56,45 @@ iframe{
 }
 
 .list-episode li{
-    width: 20%;
     transition: var(--tran-02);
 }
 
 .list-episode li p {
     cursor: pointer;
-    margin: 4px;
+    margin: 12px;
     padding: 8px;
     border-radius: 12px;
     transition: var(--tran-02);
 }
 
-.list-episode li:hover p{
+.list-episode li p:hover{
     background: var(--primary-color);
     opacity: 0.8
 }
 
 .list-episode li p {
+    white-space: nowrap;
     display: inline-block
 }
 
 .list-episode li.selected p{
     background: var(--sidebar-arrow)
+}
+
+@media screen and (min-width: 1024px) {
+    .list-episode li {
+        width: 200px;
+    }
+  }
+
+@media screen and (max-width:1024px){
+    .list-episode li{
+        width: 50%;
+    }
+  }
+
+@media screen and (max-width: 438px){
+    .list-episode li{
+        width: 100%;
+    }
 }

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { RiMovie2Line } from "react-icons/ri"
 import { BsArrowRightShort, BsArrowLeftShort } from "react-icons/bs"
 import { BiCameraMovie } from "react-icons/bi"
@@ -9,8 +9,6 @@ import { MdOutlineLocalMovies, MdOutlineDarkMode } from "react-icons/md"
 import "./header.css"
 
 function Header({ switchTheme }) {
-	let navigate = useNavigate()
-
 	const [activeSidebar, setActiveSidebar] = useState(
 		localStorage.getItem("active-sidebar") === "true"
 	)
@@ -23,10 +21,6 @@ function Header({ switchTheme }) {
 		setActiveSidebar(!activeSidebar)
 	}
 
-	const handleNavigate = (event, url) => {
-		event.preventDefault()
-		navigate(url, { replace: true })
-	}
 	return (
 		<>
 			<div className={activeSidebar ? `left-sidebar active` : `left-sidebar`}>

@@ -2,9 +2,13 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 function ItemCard({ items }) {
+	if (typeof items.searchData !== "undefined") {
+		items.pageData = items.searchData
+	}
+
 	return (
 		<>
-			{items?.pageData.map((item, i) => {
+			{items?.pageData?.map((item, i) => {
 				if (item.category[0].slug !== "phim-18") {
 					return (
 						<div className="item" key={item._id}>
@@ -24,11 +28,11 @@ function ItemCard({ items }) {
 
 							<div className="bottom-item">
 								{/* Check for different color that will suit each type, ex: Movies -> red, Cartoon -> green, etc */}
-								{item.type == "hoathinh" ? (
+								{item.type === "hoathinh" ? (
 									<h4 style={{ background: "rgb(64, 224, 32)" }}>Cartoon</h4>
-								) : item.type == "series" ? (
+								) : item.type === "series" ? (
 									<h4 style={{ background: "rgb(226, 223, 34)" }}>Series</h4>
-								) : item.type == "single" ? (
+								) : item.type === "single" ? (
 									<h4 style={{ background: "rgb(247, 107, 107)" }}>Movies</h4>
 								) : (
 									<h4 style={{ background: "rgb(35, 83, 240)" }}>TV Show</h4>

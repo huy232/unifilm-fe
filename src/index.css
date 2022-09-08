@@ -56,6 +56,8 @@ code {
   --sidebar-button: #dddddd;
   --sidebar-arrow: #695cfe;
   --episode-color: #0a0808;
+  --search-bg-color: #f78e8e;
+  --search-color: #292828;
 
   /* Transitions */;
   --tran-02: all 0.2s ease;
@@ -81,6 +83,8 @@ code {
   --sidebar-button: #dddddd;
   --sidebar-arrow: #695cfe;
   --episode-color: #d8d8d8;
+  --search-bg-color: #fdd4d4;
+  --search-color: #af0a0a;
 }
 
 
@@ -245,6 +249,7 @@ code {
 }
 
 .pagination form{
+  margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -293,13 +298,16 @@ code {
   }
 }
 
+@media screen and (max-width: 1366px) {
+  .content{
+    margin: 20px 0 0 0 ;
+  }
+}
+
 @media screen and (min-width:1024px) and (max-width:1366px) {
   .content h2{
     font-size: 30px
   }
-  /* .holder-item .item {
-    width: 33.33%;
-  } */
 }
 
 @media screen and (max-width: 1280px) {

@@ -1,0 +1,6 @@
+.text-result{
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-color)
+}

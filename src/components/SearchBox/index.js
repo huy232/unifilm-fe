@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { BsSearch } from "react-icons/bs"
+import "./searchbox.css"
 function SearchBox() {
 	const navigate = useNavigate()
 
@@ -9,19 +11,23 @@ function SearchBox() {
 		// PREVENT PAGE REFRESH
 		e.preventDefault()
 		setSearchInput("")
-		navigate(`/search?q=${searchInput}`)
+		navigate(`/search?film=${searchInput}`)
 	}
 
 	return (
 		<>
-			<div className="searchBox">
-				<form name="search" onSubmit={onSubmit}>
+			<div className="search-box">
+				<form name="search-form" onSubmit={onSubmit} className="search-form">
 					<input
+						className="search-input"
 						type="text"
-						placeholder="Want specific film?"
+						placeholder="Want a specific film?"
 						onChange={(event) => setSearchInput(event.target.value)}
 						value={searchInput}
 					/>
+					<button type="submit" className="search-button">
+						<BsSearch />
+					</button>
 				</form>
 			</div>
 		</>

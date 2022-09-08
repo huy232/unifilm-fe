@@ -1,4 +1,3 @@
-import { useRef } from "react"
 import useLocalStorage from "use-local-storage"
 
 import "./App.css"
@@ -24,7 +23,7 @@ function App() {
 		<div className="App" data-theme={theme}>
 			<Header switchTheme={switchTheme} />
 			<div className="content">
-				{/* <SearchBox /> */}
+				<SearchBox />
 				<Routes>
 					<Route exact path="/" element={<FilmLayout />} />
 					<Route path="/movies" element={<FilmLayout />} />
@@ -32,7 +31,7 @@ function App() {
 					<Route path="/series" element={<FilmLayout />} />
 					<Route path="/cartoons" element={<FilmLayout />} />
 					<Route path="/watch/:slug" element={<Watch />} />
-					{/* <Route path="/search" element={<Search />} /> */}
+					<Route path="/search" element={<Search />} />
 				</Routes>
 			</div>
 			<Footer />
