@@ -6,9 +6,11 @@ import { FILM_API } from "../../constants/"
 import "./watch.css"
 
 function Watch() {
-	const [filmData, setFilmData] = useState([])
-	const [iframeSource, setiFrameSource] = useState("")
-	const [activeEpisode, setActiveEpisode] = useState()
+	const [data, setData] = useState({
+		filmData: [],
+		iFrameSource: "",
+		activeEpisode: "",
+	})
 
 	const navigate = useNavigate()
 	const { slug } = useParams()
@@ -21,21 +23,25 @@ function Watch() {
 			.get(`${FILM_API}/${slug}`, { cancelToken: source.token })
 			.then((data) => {
 				document.title = `Unifilm - ${data.data.movie.name}`
-				setFilmData(data.data)
+				setData((prev) => ({ ...prev, filmData: data.data }))
 			})
-	}, [filmData, iframeSource, slug])
+	}, [slug, data.iFrameSource])
 
 	const handleEpisode = (iFrameSource, episodeName) => {
-		setActiveEpisode(episodeName)
-		setiFrameSource(iFrameSource)
+		console.log(iFrameSource)
+		setData((prev) => ({
+			...prev,
+			activeEpisode: episodeName,
+			iFrameSource: iFrameSource,
+		}))
 	}
 
 	return (
 		<>
 			<div className="film-content">
-				<h1>{filmData?.movie?.name}</h1>
+				<h1>{data?.filmData?.movie?.name}</h1>
 			</div>
-			{filmData?.movie?.status == "trailer" ? (
+			{data?.filmData?.movie?.status == "trailer" ? (
 				<>
 					<p className="not-update">PHIM ĐANG CẬP NHẬT, HIỆN CHƯA CÓ</p>
 					<div className="button-holder">
@@ -47,15 +53,17 @@ function Watch() {
 			) : (
 				<>
 					<iframe
-						src={iframeSource}
-						title={`${filmData?.movie?.name}`}
+						src={data.iFrameSource}
+						title={`${data?.filmData?.movie?.name}`}
 						style={{ border: "none" }}
 						allowFullScreen={true}
 					></iframe>
 					<ul className="list-episode">
-						{filmData?.episodes?.[0].server_data.map((episode, i) => (
+						{data?.filmData?.episodes?.[0].server_data.map((episode, i) => (
 							<li
-								className={episode.name == activeEpisode ? "selected" : ""}
+								className={
+									episode.name == data?.activeEpisode ? "selected" : ""
+								}
 								key={episode.name}
 							>
 								<p
