@@ -4,3 +4,9 @@
     transition: var(--tran-03);
     justify-content: space-between;
 }
+
+@media screen and (max-width: 640px){
+    .App{
+        flex-direction: column;
+    }
+}

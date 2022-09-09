@@ -18,16 +18,19 @@ function SearchBox() {
 		<>
 			<div className="search-box">
 				<form name="search-form" onSubmit={onSubmit} className="search-form">
-					<input
-						className="search-input"
-						type="text"
-						placeholder="Want a specific film?"
-						onChange={(event) => setSearchInput(event.target.value)}
-						value={searchInput}
-					/>
-					<button type="submit" className="search-button">
-						<BsSearch />
-					</button>
+					<div className="search-wrapper">
+						<input
+							className="search-input"
+							type="text"
+							placeholder="Want a specific film?"
+							onChange={(event) => setSearchInput(event.target.value)}
+							value={searchInput}
+							required
+						/>
+						<button type="submit" className="search-button">
+							<BsSearch />
+						</button>
+					</div>
 				</form>
 			</div>
 		</>

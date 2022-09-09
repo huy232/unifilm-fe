@@ -61,6 +61,53 @@
     background: var(--primary-color-light);
 }
 
+
+/* BREAKPOINT */
+
+@media screen and (max-width: 640px){
+    .footer{
+        width: 100%;
+        height: 40px;
+        position: relative;
+    }
+
+    .footer__section{
+        height: 100%;
+    }
+
+    .footer__list{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        flex-direction: row;
+    }
+
+    .footer__list a{
+        margin-top: 0;
+    }
+
+    .go-up-icon{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 0;
+        font-size: 50px;
+    }
+    
+    .footer__list a li svg{
+        height: 24px;
+        width: 24px;
+    }
+
+    .go-up-icon svg{
+        height: 40px;
+        width: 40px;
+    }
+}
+
+
+/* ANIMATION */
+
 @-webkit-keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
     10% { transform: translate(-1px, -2px) rotate(-1deg); }

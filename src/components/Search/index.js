@@ -84,6 +84,7 @@ function Search() {
 									previousLabel={<BsArrowLeftSquare />}
 									renderOnZeroPageCount={null}
 								/>
+								<div className="page-count">TOTAL PAGES: {data.pageCount}</div>
 								<form onSubmit={(e) => handlePageInput(e)}>
 									<input
 										type="number"

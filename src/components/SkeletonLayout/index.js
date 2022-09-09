@@ -10,7 +10,7 @@ function SkeletonLayout() {
 			<SkeletonTheme baseColor="#202020" highlightColor="#444">
 				<div className="holder-item">
 					{[0, 1, 2, 3, 4, 5, 6, 7].map((item, i) => (
-						<div className="item" key={i}>
+						<div className="item" key={i} style={{ padding: "0 20px" }}>
 							<a className="item-wrapper">
 								<Skeleton className="skeleton-image" />
 								<Skeleton count={2} className="skeleton-line" />
