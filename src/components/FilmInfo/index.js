@@ -1,4 +1,5 @@
 import "./filminfo.css"
+import { CATEGORY_TYPE } from "../../constants"
 
 function FilmInfo({ data }) {
 	return (
@@ -51,10 +52,10 @@ function FilmInfo({ data }) {
 					<div className="film-info__type">
 						<div className="film-info__wrapper-title">
 							<div className="film-info__title">
-								<h4>THỂ LOẠI</h4>
+								<h4>ĐỊNH DẠNG</h4>
 							</div>
 						</div>
-						<p>{data.filmData.movie.type}</p>
+						<p>{CATEGORY_TYPE[data.filmData.movie.type]}</p>
 					</div>
 					<div className="film-info__episode-total">
 						<div className="film-info__wrapper-title">

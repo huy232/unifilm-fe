@@ -10,9 +10,17 @@ const PATHNAME = {
 	"/series": "PHIM BỘ",
 }
 
+const CATEGORY_TYPE = {
+	hoathinh: "Hoạt Hình - Anime",
+	series: "Phim Bộ",
+	tvshows: "Truyền Hình",
+	single: "Phim Lẻ",
+}
+
 module.exports = {
 	UNIFILM_API,
 	FILM_API,
 	SEARCH_API,
 	PATHNAME,
+	CATEGORY_TYPE,
 }
