@@ -3,6 +3,7 @@
     display: flex;
     transition: var(--tran-03);
     justify-content: space-between;
+    min-height: 100vh
 }
 
 @media screen and (max-width: 640px){

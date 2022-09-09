@@ -2,36 +2,12 @@
     text-align: center;
 }
 
-.film-content h1{
+.film-content h2{
     color: var(--main-title)
 }
 
-.not-update{
-    color: var(--episode-color);
-    text-align: center;
-}
-
-.button-holder{
-    width: 100%;
-}
-
-.not-update-button{
-    font-weight: 600;
-    cursor: pointer;
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
-    display: block;
-    margin: 0 auto;
-    margin-top: 20px;
-    background: var(--sub-text-color);
-    color: var(--toggle-color);
-    transition: var(--tran-03)
-}
-
-.not-update-button:hover{
-    opacity: 0.8;
-    scale: 1.1;
+.film-content h3{
+    color: var(--search-color)
 }
 
 iframe{
@@ -79,6 +55,12 @@ iframe{
 
 .list-episode li.selected p{
     background: var(--sidebar-arrow)
+}
+
+.film-loading{
+    display: block;
+    width: 100%;
+    margin: 0 auto
 }
 
 @media screen and (min-width: 1024px) {

@@ -1,0 +1,28 @@
+.not-update{
+    color: var(--episode-color);
+    text-align: center;
+}
+
+.button-holder{
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.not-update-button{
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    background: var(--sub-text-color);
+    color: var(--toggle-color);
+    transition: var(--tran-03)
+}
+
+.not-update-button:hover{
+    opacity: 0.8;
+    scale: 1.1;
+}

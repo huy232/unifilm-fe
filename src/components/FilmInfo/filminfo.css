@@ -1,0 +1,104 @@
+.film-info{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    transition: var(--tran-05)
+}
+
+.film-info__image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%
+}
+
+.film-info__image img{
+    -o-object-fit: contain;
+       object-fit: contain;
+    border-radius: 10px;
+    max-height: 300px;
+    box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+}
+
+.film-info__information{
+    margin: 60px 0;
+    padding-left: 20px;
+    width: 80%;
+    transition: var(--tran-05)
+}
+
+.film-info__information > div{
+    margin-top: 10px;
+    display: flex;
+    align-items: center
+}
+
+.film-info__wrapper-title{
+    width: 30%;
+}
+
+.film-info__title{
+    white-space: nowrap;
+    display: inline-block;
+    border-radius: 10px;
+    background: var(--episode-info-bg);
+}
+
+.film-info__information > div div h4{
+    font-weight: 900;
+    padding: 8px;
+    color: var(--episode-info);
+}
+
+.film-info > div p {
+    font-weight: 700;
+    color: var(--episode-sub-info)
+}
+
+.film-info__category > div p {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 14px;
+    margin-left: 8px;
+    background: var(--episode-sub-info-bg);
+}
+
+.film-info__wrapper-content{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.film-info__description{
+    display: block;
+    width: 100%;
+    margin: 0 0 20px 0;
+}
+
+.film-info__description p{
+    border-radius: 18px;
+    padding: 20px;
+    font-weight: 600;
+    background: var(--episode-description-bg);
+    color: var(--episode-description);
+    width: 80%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) {
+    .film-info{
+        flex-direction: column;
+        align-items: center
+    }
+    .film-info__information{
+        padding-left: 0;
+    }
+    .film-info__information > div{
+        flex-direction: column;
+    }
+    .film-info__wrapper-title{
+        width: auto;
+    }
+    .film-info__wrapper-content{
+        justify-content: center
+    }
+  }
