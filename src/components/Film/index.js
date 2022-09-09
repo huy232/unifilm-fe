@@ -28,7 +28,7 @@ function Film({ data, handleEpisode }) {
 							<p
 								onClick={() => handleEpisode(episode.link_embed, episode.name)}
 							>
-								Episode {episode.name}
+								Tập {episode.name}
 							</p>
 						</li>
 					))}

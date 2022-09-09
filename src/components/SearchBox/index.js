@@ -22,7 +22,7 @@ function SearchBox() {
 						<input
 							className="search-input"
 							type="text"
-							placeholder="Want a specific film?"
+							placeholder="Muốn tìm một phim cụ thể?"
 							onChange={(event) => setSearchInput(event.target.value)}
 							value={searchInput}
 							required

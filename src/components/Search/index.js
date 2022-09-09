@@ -66,7 +66,7 @@ function Search() {
 			) : (
 				<>
 					{data.searchData.length === 0 ? (
-						<p className="text-result">Found none for your search result</p>
+						<p className="text-result">Không tìm thấy kết quả</p>
 					) : (
 						<>
 							<div className="holder-item">
@@ -84,7 +84,7 @@ function Search() {
 									previousLabel={<BsArrowLeftSquare />}
 									renderOnZeroPageCount={null}
 								/>
-								<div className="page-count">TOTAL PAGES: {data.pageCount}</div>
+								<div className="page-count">TỔNG TRANG: {data.pageCount}</div>
 								<form onSubmit={(e) => handlePageInput(e)}>
 									<input
 										type="number"

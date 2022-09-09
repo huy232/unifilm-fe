@@ -53,7 +53,7 @@ function Header({ switchTheme }) {
 				</header>
 				<div className="sidebar-body">
 					<ul className="sidebar-category">
-						<li className="sidebar-category__item" title="Movies">
+						<li className="sidebar-category__item" title="PHIM LẺ">
 							<Link to="/movies" reloadDocument>
 								<span>
 									<BiCameraMovie />
@@ -77,7 +77,7 @@ function Header({ switchTheme }) {
 								</h2>
 							</Link>
 						</li>
-						<li className="sidebar-category__item" title="Series">
+						<li className="sidebar-category__item" title="PHIM BỘ">
 							<Link to="/series" reloadDocument>
 								<span>
 									<MdOutlineLocalMovies />
@@ -89,7 +89,7 @@ function Header({ switchTheme }) {
 								</h2>
 							</Link>
 						</li>
-						<li className="sidebar-category__item" title="Cartoons/Anime">
+						<li className="sidebar-category__item" title="HOẠT HÌNH - ANIME">
 							<Link to="/cartoons" reloadDocument>
 								<span>
 									<RiMovieLine />

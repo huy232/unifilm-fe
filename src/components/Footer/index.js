@@ -36,7 +36,10 @@ function Footer() {
 							</li>
 						</a>
 						<div className="go-up-icon">
-							<BsArrowUpSquare title="Want to go up?" onClick={handleGoUp} />
+							<BsArrowUpSquare
+								title="Muốn lên đầu trang?"
+								onClick={handleGoUp}
+							/>
 						</div>
 					</ul>
 				</div>
