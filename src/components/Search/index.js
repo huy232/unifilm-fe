@@ -90,7 +90,7 @@ function Search() {
 										type="number"
 										min="1"
 										max={data.pageCount}
-										placeholder="Enter page number"
+										placeholder="Nhập số trang"
 										pattern="[-]?[0-9]*[.,]?[0-9]+"
 										inputMode="decimal"
 									/>
