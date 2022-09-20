@@ -221,7 +221,7 @@
 }
 
 @media screen and (max-width: 640px){
-    .left-sidebar{
+    .left-sidebar, .left-sidebar.active{
         position: relative;
         width: 100%;
         height: 80px;
