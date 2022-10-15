@@ -1,6 +1,6 @@
-const UNIFILM_API = "https://unifilm-backend.herokuapp.com/api"
+const UNIFILM_API = "https://unifilm-backend.onrender.com/api"
 const FILM_API = "https://ophim1.com/phim"
-const SEARCH_API = "https://unifilm-backend.herokuapp.com/api/search"
+const SEARCH_API = "https://unifilm-backend.onrender.com/api/search"
 
 const PATHNAME = {
 	"/": "MỚI NHẤT",
